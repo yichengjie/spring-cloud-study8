@@ -1,0 +1,7 @@
+org.springframework.cloud.bootstrap.BootstrapConfiguration=\
+  com.yicj.study.config.component.HelloApplicationContextInitializer,\
+  com.yicj.study.config.component.MyPropertySourceLocator
+
+org.springframework.boot.env.EnvironmentPostProcessor=\
+  com.yicj.study.config.component.MyEnvironmentPostProcessor
+

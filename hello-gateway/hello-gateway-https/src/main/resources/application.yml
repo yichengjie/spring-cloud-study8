@@ -1,0 +1,32 @@
+server:
+  port: 5555
+  ssl:
+    key-alias: spring
+    enabled: true
+    key-password: spring
+    key-store: classpath:selfsigned.jks
+    key-store-type: JKS
+    key-store-provider: SUN
+    key-store-password: spring
+spring:
+  application:
+    name: hello-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+logging:
+  level:
+    org.springframework.cloud.gateway: TRACE
+    org.springframework.http.server.reactive: DEBUG
+    org.springframework.web.reactive: DEBUG
+    reactor.ipc.netty: DEBUG

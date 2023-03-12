@@ -1,0 +1,33 @@
+server:
+  port: 5555
+spring:
+  application:
+    name: hello-gateway-swagger
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: client-a
+          uri: lb://client-a
+          predicates:
+            - Path=/client-a/**
+          filters:
+            - GatewaySwaggerHeaderFilter
+            - StripPrefix=1
+        - id: client-b
+          uri: lb://client-b
+          predicates:
+            - Path=/client-b/**
+          filters:
+            - GatewaySwaggerHeaderFilter
+            - StripPrefix=1
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/
+  instance:
+    prefer-ip-address: true

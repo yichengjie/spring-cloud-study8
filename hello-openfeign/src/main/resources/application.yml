@@ -1,0 +1,36 @@
+server:
+  port: 7072
+spring:
+  application:
+    name: hello-openfeign
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+feign:
+  compression:
+    request:
+      enabled: true
+      mime-types: "text/xml, application/xml, application/json"
+      min-request-size: 2048
+    response:
+      enabled: true # 配置相应GZIP压缩
+  client:
+    config:
+      # feignName 注意这里与contextId一致，不能写成name（FeignClientFactoryBean#configureFeign）
+      # 不能写成 client-b，否则不生效
+      helloFeignClient:
+      #default:
+        connectTimeout: 500000 # 连接超时时间
+        readTimeout: 500000 # 读超时时间
+        loggerLevel: full #配置Feign的日志级别
+  httpclient:
+    connection-timeout: 2000
+
+logging:
+  level:
+    root: info
+    com.yicj.study.feign.remote.feign: debug
