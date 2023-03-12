@@ -1,11 +1,3 @@
-#### SpringBoot服务提供者开启gizp压缩
-1. yaml中添加压缩配置
-   ```yaml
-   server:
-     port: 7070
-     compression:
-       enabled: true
-   ```
 #### feign 配置
 1. 针对单个feign接口进行配置
     ```yaml
@@ -13,7 +5,7 @@
       client:
         config:
           # feignName 注意这里与contextId一致，不能写成name（FeignClientFactoryBean#configureFeign）
-          # 不能写成 client-b，否则不生效
+          # 不能写成 client-b (微服务名称)，否则不生效
           helloFeignClient: # contextId
             connectTimeout: 50000 # 连接超时时间
             readTimeout: 50000 # 读超时时间
@@ -157,4 +149,12 @@
            log.info("user info : {}", userInfo);
        }
    }
+   ```
+#### 其他知识点补充
+1. SpringBoot服务提供者开启gizp压缩
+   ```yaml
+   server:
+     port: 7070
+     compression:
+       enabled: true
    ```
