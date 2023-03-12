@@ -20,7 +20,7 @@ public class HelloFeignApplication {
         SpringApplication.run(HelloFeignApplication.class, args) ;
     }
 
-    //@Bean
+    @Bean
     public Decoder GZIPResponseDecoder(ObjectFactory<HttpMessageConverters> messageConverters) {
         Decoder decoder = new FeignResponseDecoder(new SpringDecoder(messageConverters));
         return decoder;
