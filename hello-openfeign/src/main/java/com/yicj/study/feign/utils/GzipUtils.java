@@ -8,7 +8,6 @@ import java.nio.charset.StandardCharsets;
 import java.util.zip.GZIPInputStream;
 
 public final class GzipUtils {
-
     public static String decompress(byte [] compressed) throws IOException {
         final StringBuilder output = new StringBuilder() ;
         try(GZIPInputStream gis = new GZIPInputStream(new ByteArrayInputStream(compressed));
@@ -20,5 +19,4 @@ public final class GzipUtils {
             return output.toString() ;
         }
     }
-
 }
