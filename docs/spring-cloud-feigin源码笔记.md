@@ -35,19 +35,9 @@
 2. FeignClientFactoryBean#getTarget -> feign(FeignContext context)
 3. FeignContext根据contextId获取ApplicationContext对象，如果不存在则新建，并放入FeignContext中缓存起来, 其中key为contextId
 4. 根据FeignClient构建的Application中传入 FeignClientsConfiguration , PropertyPlaceholderAutoConfiguration配置类，并设置partner为外部容器
-
-5. getTarget -> loadBalance -> HystrixTargeter#target  -> feign#target(target) -> build()#newInstance(target) -> ReflectiveFeign.newInstance生成代理对象
-
-10. LoadBalancerFeignClient#execute -> lbClient => FeignLoadBalancer -> FeignLoadBalancer#executeWithLoadBalancer
-
-11. SynchronousMethodHandler#invoke -> executeAndDecode -> LoadBalancerFeignClient#execute
-
-12. CachingSpringLoadBalancerFactory#create(clientName) -> ILoadBalancer: ZoneAwareLoadBalancers => FeignLoadBalancer(lb, config, serverIntrospector)
-
-
-##### 根据ReflectiveFeign#newInstance生成代理对象
-
-7. ReflectiveFeign.ParseHandlersByName#apply
-8. SpringMvcContract#parseAndValidateMetadata
-9. SynchronousMethodHandler$Factory#create => SynchronousMethodHandler
-10. FieldQueryMapEncoder.
+5. getTarget -> loadBalance -> HystrixTargeter#target  -> feign#target(target)
+6. Feign#build() -> newInstance(target) -> targetToHandlersByName#apply -> Map<String, SynchronousMethodHandler> map
+7. ReflectiveFeign.newInstance -> InvocationHandlerFactory.Default#create => ReflectiveFeign.FeignInvocationHandler
+8. SynchronousMethodHandler#invoke -> executeAndDecode
+10. LoadBalancerFeignClient#execute -> lbClient -> CachingSpringLoadBalancerFactory#create(clientName) => ILoadBalancer: ZoneAwareLoadBalancers => FeignLoadBalancer
+11. FeignLoadBalancer#executeWithLoadBalancer 发送请求
