@@ -10,11 +10,15 @@ import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
 import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.cloud.loadbalancer.annotation.LoadBalancerClient;
+import org.springframework.cloud.loadbalancer.annotation.LoadBalancerClients;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.cloud.openfeign.support.SpringDecoder;
 import org.springframework.context.annotation.Bean;
 
 @Slf4j
+@LoadBalancerClient(value = "client-a", configuration = {})
+// @LoadBalancerClients
 @EnableFeignClients
 @EnableDiscoveryClient
 @SpringBootApplication
