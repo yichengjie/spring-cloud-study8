@@ -29,8 +29,11 @@ feign:
         loggerLevel: full #配置Feign的日志级别
   httpclient:
     connection-timeout: 2000
+  hystrix:
+    enabled: false
 
 logging:
   level:
     root: info
     com.yicj.study.feign.remote.feign: debug
+
