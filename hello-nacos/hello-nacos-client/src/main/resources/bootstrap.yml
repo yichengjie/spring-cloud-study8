@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    active: tst
+  application:
+    name: example
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.99.51:8848
+        prefix: example
+        file-extension: yaml
