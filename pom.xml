@@ -19,6 +19,7 @@
         <module>hello-config</module>
         <module>hello-gateway</module>
         <module>hello-eureka</module>
+        <module>hello-nacos</module>
     </modules>
 
     <parent>
