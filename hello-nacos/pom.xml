@@ -19,6 +19,6 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>hello-nacos-client</module>
+        <module>hello-nacos-config</module>
     </modules>
 </project>
