@@ -20,6 +20,7 @@
         <module>hello-gateway</module>
         <module>hello-eureka</module>
         <module>hello-nacos</module>
+        <module>hello-web-mvc</module>
     </modules>
 
     <parent>
