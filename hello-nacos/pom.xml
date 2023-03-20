@@ -21,5 +21,6 @@
     <modules>
         <module>hello-nacos-config</module>
         <module>hello-nacos-client</module>
+        <module>boot-nacos-config</module>
     </modules>
 </project>
