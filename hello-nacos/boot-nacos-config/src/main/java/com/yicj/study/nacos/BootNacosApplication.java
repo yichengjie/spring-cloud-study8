@@ -1,6 +1,7 @@
 package com.yicj.study.nacos;
 
 import com.alibaba.nacos.api.config.annotation.NacosValue;
+import com.alibaba.nacos.spring.context.annotation.config.EnableNacosConfig;
 import com.alibaba.nacos.spring.context.annotation.config.NacosPropertySource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
@@ -8,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @Slf4j
+@EnableNacosConfig
 @SpringBootApplication
 @NacosPropertySource(dataId = "example", autoRefreshed = true)
 public class BootNacosApplication {
