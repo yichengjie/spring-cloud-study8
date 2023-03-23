@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: hello-mvc
+custom:
+  user:
+    username: ${nacos.user.username}
+    address: ${nacos.user.address}

@@ -6,8 +6,8 @@ import org.springframework.context.SmartLifecycle;
 import org.springframework.stereotype.Component;
 
 @Slf4j
-@Component
-class HelloLifecycle implements /*Smart*/Lifecycle {
+//@Component
+public class HelloLifecycle implements /*Smart*/Lifecycle {
 
 
     @Override
