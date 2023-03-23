@@ -3,5 +3,5 @@ spring:
     name: hello-mvc
 custom:
   user:
-    username: ${nacos.user.username}
-    address: ${nacos.user.address}
+    username: ${nacos.user.username:yicj}
+    address: ${nacos.user.address:bjs}
