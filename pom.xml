@@ -21,6 +21,7 @@
         <module>hello-eureka</module>
         <module>hello-nacos</module>
         <module>hello-web-mvc</module>
+        <module>hello-jdbc</module>
     </modules>
 
     <parent>
