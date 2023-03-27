@@ -20,11 +20,4 @@ public class HelloMvcApplication{
                 SpringApplication.run(HelloMvcApplication.class, args);
         context.start();
     }
-
-    @Bean
-    public HelloLifecycle helloLifecycle(){
-        HelloLifecycle helloLifecycle = new HelloLifecycle();
-        log.info("-----> hello lifecycle bean init");
-        return helloLifecycle ;
-    }
 }
