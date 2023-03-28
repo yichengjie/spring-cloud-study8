@@ -7,5 +7,5 @@ public interface UserInfoService extends IService<UserInfo> {
 
     UserInfo findById(Integer id) ;
 
-    int updateByNameById(String username, Integer id) ;
+    int updateUserNameById(String username, Integer id) ;
 }

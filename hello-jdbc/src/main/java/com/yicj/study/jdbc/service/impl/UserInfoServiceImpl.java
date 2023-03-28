@@ -21,7 +21,7 @@ public class UserInfoServiceImpl extends ServiceImpl<UserInfoMapper, UserInfo>
 
     @Override
     @Transactional(rollbackFor = Exception.class, propagation = Propagation.REQUIRED)
-    public int updateByNameById(String username, Integer id) {
+    public int updateUserNameById(String username, Integer id) {
         LambdaUpdateWrapper<UserInfo> wrapper = new LambdaUpdateWrapper<>() ;
         wrapper.set(UserInfo::getUsername, username) ;
         wrapper.eq(UserInfo::getId, id) ;

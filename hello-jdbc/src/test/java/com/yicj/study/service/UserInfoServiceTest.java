@@ -54,4 +54,13 @@ public class UserInfoServiceTest extends BaseJunitTest {
         log.info("list size : {}", list.size());
         list.forEach(item -> log.info("===> {}", item));
     }
+
+
+    @Test
+    public void updateUsernameById(){
+        String username = "田七" ;
+        Integer id = 1 ;
+        int count = userInfoService.updateUserNameById(username, id);
+        log.info("count : {}", count);
+    }
 }
