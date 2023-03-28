@@ -5,5 +5,7 @@ import com.yicj.study.jdbc.repository.entity.UserInfo;
 
 public interface UserInfoService extends IService<UserInfo> {
 
-    UserInfo findById(String id) ;
+    UserInfo findById(Integer id) ;
+
+    int updateByNameById(String username, Integer id) ;
 }

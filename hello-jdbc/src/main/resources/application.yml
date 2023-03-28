@@ -4,3 +4,9 @@ spring:
     url: jdbc:sqlite::resource:db/test.db # 相对路径
     # mysql8 以上使用 cj
     driver-class-name: org.sqlite.JDBC
+logging:
+  level: 
+    root: info
+    com.yicj.study.jdbc.repository.mapper: debug
+
+  

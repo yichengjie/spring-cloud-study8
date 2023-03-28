@@ -3,10 +3,9 @@ package com.yicj.study.jdbc;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 
-@MapperScan
+@MapperScan(basePackages = "com.yicj.study.jdbc.repository.mapper")
 @SpringBootApplication
 public class JdbcApplication {
 
